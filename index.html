@@ -93,6 +93,8 @@ p{margin:0 0 12px}
 .extra .tag{display:inline-block;background:var(--gold);color:#3a2a00;font-size:12px;font-weight:800;padding:3px 10px;border-radius:99px;margin-bottom:8px}
 .extra .free{display:inline-block;margin-top:8px;color:var(--green);font-weight:800;font-size:13px}
 .alert{background:#fdecea;color:#a93226;font-weight:800;text-align:center;padding:10px 14px;border-radius:12px;margin-bottom:18px;font-size:15px}
+.timer{background:var(--navy);color:#fff;font-weight:800;text-align:center;padding:12px 14px;border-radius:12px;margin-bottom:18px;font-size:15px;letter-spacing:.02em}
+.timer b{color:var(--gold);font-size:18px;font-variant-numeric:tabular-nums}
 .plans{display:grid;gap:22px}
 .plan{background:#fff;border:2px solid var(--line);border-radius:20px;padding:26px;position:relative}
 .plan.best{border-color:var(--green)}
@@ -172,6 +174,7 @@ img{height:auto}
   details{padding:11px 14px;margin-bottom:8px}
   .listbox{padding:14px}
   .alert{margin-bottom:12px}
+  .timer{margin-bottom:12px}
 }
 
 /* ===== Hero: imagem logo após título e subtítulo ===== */
@@ -211,7 +214,7 @@ img{height:auto}
 
 <div class="secure">⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE <span id="hoje">07/10/2026</span><br>🔒 Compra 100% segura e protegida</div>
 
-<!-- 1. HERO -->
+<!-- 1. HERO (título, subtítulo, foto, botão pra oferta) -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="h-top">
@@ -234,81 +237,7 @@ img{height:auto}
   </div>
 </section>
 
-<!-- 2. VEJA POR DENTRO -->
-<section class="bg-l">
-  <div class="wrap center">
-    <span class="kicker">VEJA POR DENTRO</span>
-    <h2>CONHEÇA O MATERIAL QUE VOCÊ VAI RECEBER</h2>
-    <p>Páginas reais do material, com mapas, comparativo, flashcards e planner.</p>
-    <div class="slider" id="slider" style="text-align:left"><div class="track" id="track">
-      <img src="img/pagina1.webp" width="900" height="600" decoding="async" loading="eager" fetchpriority="low" alt="Mapa mental de Psicanálise (Freud)" style="border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-right:14px;flex:0 0 auto;">
-      <img src="img/pagina2.webp" width="900" height="600" decoding="async" loading="eager" fetchpriority="low" alt="Comparativo entre Psicanálise, Behaviorismo e Epistemologia Genética" style="border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-right:14px;flex:0 0 auto;">
-      <img src="img/pagina3.webp" width="900" height="600" decoding="async" loading="eager" fetchpriority="low" alt="Flashcards de revisão" style="border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-right:14px;flex:0 0 auto;">
-      <img src="img/pagina4.webp" width="900" height="1350" decoding="async" loading="eager" fetchpriority="low" alt="Planner de estudos de Psicologia" style="border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-right:14px;flex:0 0 auto;">
-    </div></div>
-    <p class="note" style="margin-top:12px">Arraste para o lado para ver mais →</p>
-  </div>
-</section>
-
-<!-- 3. O MATERIAL FOI CRIADO PARA -->
-<section class="bg-w">
-  <div class="wrap center">
-    <span class="kicker">O MATERIAL FOI CRIADO PARA:</span>
-    <div class="grid c3" style="text-align:left;margin-top:18px">
-      <div class="card"><div class="ico">🎯</div><h3>FACILITAR A COMPREENSÃO</h3><p>Elementos visuais ajudam a entender a teoria antes de decorar.</p></div>
-      <div class="card"><div class="ico">🧩</div><h3>TRANSFORMAR REVISÃO EM MEMORIZAÇÃO RÁPIDA</h3><p>Flashcards e comparativo tornam a prova menos assustadora.</p></div>
-      <div class="card"><div class="ico">📚</div><h3>REFORÇAR O CONTEÚDO DA AULA</h3><p>Organiza o que a maioria dos professores não entrega pronto.</p></div>
-      <div class="card"><div class="ico">⚡</div><h3>COMEÇAR SEM COMPLICAÇÃO</h3><p>Baixe o PDF e já pode estudar, no computador ou no celular.</p></div>
-      <div class="card"><div class="ico">🗂️</div><h3>MANTER TUDO ORGANIZADO</h3><p>Conteúdo separado por escola/teoria, fácil de encontrar.</p></div>
-      <div class="card"><div class="ico">📅</div><h3>PLANEJAR O SEMESTRE</h3><p>Controle de provas e revisões num só lugar, sem precisar inventar do zero.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. PROVA SOCIAL (depoimentos reais enviados por quem comprou) -->
-<section class="bg-s">
-  <div class="wrap center">
-    <span class="kicker">MATERIAL NA PRÁTICA</span>
-    <h2>QUEM JÁ TÁ USANDO PRA REVISAR</h2>
-    <p>Veja relatos enviados por quem recebeu o material e já está usando pra estudar.</p>
-    <div class="pcar" id="pcar"><button class="pnav prev" type="button" aria-label="Relato anterior">‹</button><button class="pnav next" type="button" aria-label="Próximo relato">›</button>
-    <div class="proof" id="proof">
-      <img src="img/depoimento1.webp" width="1044" height="870" decoding="async" loading="lazy" alt="Relato de aluno(a)" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%">
-      <img src="img/depoimento2.webp" width="1080" height="928" decoding="async" loading="lazy" alt="Relato de aluno(a)" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%">
-      <img src="img/depoimento3.webp" width="1080" height="408" decoding="async" loading="lazy" alt="Relato de aluno(a)" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%">
-      <img src="img/depoimento4.webp" width="1080" height="430" decoding="async" loading="lazy" alt="Relato de aluno(a)" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%">
-    </div></div>
-    <div class="pdots" id="pdots" aria-hidden="true"></div>
-    <p class="note" id="phint">Deslize ou use as setas • toque para ampliar</p>
-  </div>
-</section>
-
-<!-- 4b. URGÊNCIA / CHAMADA -->
-<section class="urgency center">
-  <div class="wrap">
-    <span class="kicker" style="color:var(--gold)">OFERTA VÁLIDA POR TEMPO LIMITADO</span>
-    <h2>PARE DE RELER O MESMO CAPÍTULO SEM ENTENDER</h2>
-    <p>Tenha o resumo visual pronto sempre que precisar estudar ou revisar antes da prova.</p>
-    <a class="btn" href="#planos" data-cta="urgency">GARANTIR O MATERIAL</a>
-  </div>
-</section>
-
-<!-- 5. PÚBLICO -->
-<section class="bg-s">
-  <div class="wrap center">
-    <h2>ESTE MATERIAL É IDEAL PARA VOCÊ QUE</h2>
-    <div class="grid c3" style="text-align:left;margin-top:18px">
-      <div class="card"><div class="ico">🧠</div><h3>TRAVA NA TEORIA DA PERSONALIDADE</h3><p>Perde a linha de raciocínio toda vez que o livro compara as escolas.</p></div>
-      <div class="card"><div class="ico">📖</div><h3>NÃO AGUENTA MAIS RELER O CAPÍTULO</h3><p>Texto denso que não vira entendimento, só mais cansaço.</p></div>
-      <div class="card"><div class="ico">😰</div><h3>FICA PERDIDO EM PROVA COMPARATIVA</h3><p>Questão que pede a diferença entre autores e escolas.</p></div>
-      <div class="card"><div class="ico">⏰</div><h3>TEM POUCO TEMPO PRA ESTUDAR</h3><p>Entre estágio, trabalho e aula, sobra pouco tempo pra reler livro.</p></div>
-      <div class="card"><div class="ico">🎯</div><h3>QUER ENTENDER DE VERDADE</h3><p>Não só decorar pra passar e esquecer no semestre seguinte.</p></div>
-      <div class="card"><div class="ico">🗒️</div><h3>NÃO TEM UM PLANNER QUE FUNCIONE</h3><p>Precisa de organização pensada pra rotina de quem faz Psicologia.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. TUDO O QUE VOCÊ VAI RECEBER -->
+<!-- 2. O QUE VOCÊ VAI RECEBER -->
 <section class="bg-s">
   <div class="wrap center">
     <h2>TUDO O QUE VOCÊ VAI RECEBER</h2>
@@ -339,7 +268,22 @@ img{height:auto}
   </div>
 </section>
 
-<!-- 7. EXTRAS DO PLANO COMPLETO -->
+<!-- 3. POR QUE ESCOLHER NOSSO MATERIAL (benefícios) -->
+<section class="bg-w">
+  <div class="wrap center">
+    <span class="kicker">O MATERIAL FOI CRIADO PARA:</span>
+    <div class="grid c3" style="text-align:left;margin-top:18px">
+      <div class="card"><div class="ico">🎯</div><h3>FACILITAR A COMPREENSÃO</h3><p>Elementos visuais ajudam a entender a teoria antes de decorar.</p></div>
+      <div class="card"><div class="ico">🧩</div><h3>TRANSFORMAR REVISÃO EM MEMORIZAÇÃO RÁPIDA</h3><p>Flashcards e comparativo tornam a prova menos assustadora.</p></div>
+      <div class="card"><div class="ico">📚</div><h3>REFORÇAR O CONTEÚDO DA AULA</h3><p>Organiza o que a maioria dos professores não entrega pronto.</p></div>
+      <div class="card"><div class="ico">⚡</div><h3>COMEÇAR SEM COMPLICAÇÃO</h3><p>Baixe o PDF e já pode estudar, no computador ou no celular.</p></div>
+      <div class="card"><div class="ico">🗂️</div><h3>MANTER TUDO ORGANIZADO</h3><p>Conteúdo separado por escola/teoria, fácil de encontrar.</p></div>
+      <div class="card"><div class="ico">📅</div><h3>PLANEJAR O SEMESTRE</h3><p>Controle de provas e revisões num só lugar, sem precisar inventar do zero.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. BÔNUS DA OFERTA -->
 <section class="bg-s" style="padding-top:8px">
   <div class="wrap center">
     <h2>E NÃO PARA POR AÍ... TEM MAIS!</h2>
@@ -370,10 +314,13 @@ img{height:auto}
   </div>
 </section>
 
-<!-- 8. PLANOS -->
+<!-- 5. OFERTA (planos + temporizador) -->
 <section id="planos" class="bg-s" style="padding-top:8px">
   <div class="wrap center">
-    <span class="kicker" style="color:var(--gold)">🔥 ÚLTIMA CHANCE — OFERTA TERMINA HOJE</span>
+    <span class="kicker" style="color:var(--gold)">OFERTA VÁLIDA POR TEMPO LIMITADO</span>
+    <h2>PARE DE RELER O MESMO CAPÍTULO SEM ENTENDER</h2>
+    <p>Tenha o resumo visual pronto sempre que precisar estudar ou revisar antes da prova.</p>
+    <div class="timer">⏳ Esta oferta fica disponível por mais <b id="timerClock">15:00</b></div>
     <div class="alert">ESCOLHA A MELHOR OPÇÃO PARA VOCÊ</div>
     <div class="plans" style="text-align:left">
       <div class="plan" style="display:flex; flex-direction:column; padding:32px 24px;">
@@ -424,6 +371,40 @@ img{height:auto}
   </div>
 </section>
 
+<!-- 6. EXEMPLOS DO MATERIAL -->
+<section class="bg-l">
+  <div class="wrap center">
+    <span class="kicker">VEJA POR DENTRO</span>
+    <h2>CONHEÇA O MATERIAL QUE VOCÊ VAI RECEBER</h2>
+    <p>Páginas reais do material, com mapas, comparativo, flashcards e planner.</p>
+    <div class="slider" id="slider" style="text-align:left"><div class="track" id="track">
+      <img src="img/pagina1.webp" width="900" height="600" decoding="async" loading="eager" fetchpriority="low" alt="Mapa mental de Psicanálise (Freud)" style="border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-right:14px;flex:0 0 auto;">
+      <img src="img/pagina2.webp" width="900" height="600" decoding="async" loading="eager" fetchpriority="low" alt="Comparativo entre Psicanálise, Behaviorismo e Epistemologia Genética" style="border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-right:14px;flex:0 0 auto;">
+      <img src="img/pagina3.webp" width="900" height="600" decoding="async" loading="eager" fetchpriority="low" alt="Flashcards de revisão" style="border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-right:14px;flex:0 0 auto;">
+      <img src="img/pagina4.webp" width="900" height="1350" decoding="async" loading="eager" fetchpriority="low" alt="Planner de estudos de Psicologia" style="border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-right:14px;flex:0 0 auto;">
+    </div></div>
+    <p class="note" style="margin-top:12px">Arraste para o lado para ver mais →</p>
+  </div>
+</section>
+
+<!-- 7. DEPOIMENTOS (prova social real enviada por quem comprou) -->
+<section class="bg-s">
+  <div class="wrap center">
+    <span class="kicker">MATERIAL NA PRÁTICA</span>
+    <h2>QUEM JÁ TÁ USANDO PRA REVISAR</h2>
+    <p>Veja relatos enviados por quem recebeu o material e já está usando pra estudar.</p>
+    <div class="pcar" id="pcar"><button class="pnav prev" type="button" aria-label="Relato anterior">‹</button><button class="pnav next" type="button" aria-label="Próximo relato">›</button>
+    <div class="proof" id="proof">
+      <img src="img/depoimento1.webp" width="1044" height="870" decoding="async" loading="lazy" alt="Relato de aluno(a)" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%">
+      <img src="img/depoimento2.webp" width="1080" height="928" decoding="async" loading="lazy" alt="Relato de aluno(a)" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%">
+      <img src="img/depoimento3.webp" width="1080" height="408" decoding="async" loading="lazy" alt="Relato de aluno(a)" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%">
+      <img src="img/depoimento4.webp" width="1080" height="430" decoding="async" loading="lazy" alt="Relato de aluno(a)" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%">
+    </div></div>
+    <div class="pdots" id="pdots" aria-hidden="true"></div>
+    <p class="note" id="phint">Deslize ou use as setas • toque para ampliar</p>
+  </div>
+</section>
+
 <!-- 8. GARANTIA -->
 <section class="bg-w">
   <div class="wrap">
@@ -433,6 +414,21 @@ img{height:auto}
         <h2 style="margin-bottom:8px">GARANTIA DE 7 DIAS — RISCO ZERO PARA VOCÊ</h2>
         <p style="margin:0">Você pode acessar o material e avaliar com calma. Se entender que ele não atende ao que precisa, poderá solicitar o reembolso dentro do prazo da garantia, conforme as regras da plataforma de pagamento.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8b. PÚBLICO (dores) -->
+<section class="bg-s">
+  <div class="wrap center">
+    <h2>ESTE MATERIAL É IDEAL PARA VOCÊ QUE</h2>
+    <div class="grid c3" style="text-align:left;margin-top:18px">
+      <div class="card"><div class="ico">🧠</div><h3>TRAVA NA TEORIA DA PERSONALIDADE</h3><p>Perde a linha de raciocínio toda vez que o livro compara as escolas.</p></div>
+      <div class="card"><div class="ico">📖</div><h3>NÃO AGUENTA MAIS RELER O CAPÍTULO</h3><p>Texto denso que não vira entendimento, só mais cansaço.</p></div>
+      <div class="card"><div class="ico">😰</div><h3>FICA PERDIDO EM PROVA COMPARATIVA</h3><p>Questão que pede a diferença entre autores e escolas.</p></div>
+      <div class="card"><div class="ico">⏰</div><h3>TEM POUCO TEMPO PRA ESTUDAR</h3><p>Entre estágio, trabalho e aula, sobra pouco tempo pra reler livro.</p></div>
+      <div class="card"><div class="ico">🎯</div><h3>QUER ENTENDER DE VERDADE</h3><p>Não só decorar pra passar e esquecer no semestre seguinte.</p></div>
+      <div class="card"><div class="ico">🗒️</div><h3>NÃO TEM UM PLANNER QUE FUNCIONE</h3><p>Precisa de organização pensada pra rotina de quem faz Psicologia.</p></div>
     </div>
   </div>
 </section>
@@ -500,6 +496,28 @@ if (window.fbq) fbq("track", "ViewContent");
 
 // Data do banner = dia atual do visitante.
 (function(){var d=new Date(),p=function(n){return (n<10?"0":"")+n;},el=document.getElementById("hoje");if(el)el.textContent=p(d.getDate())+"/"+p(d.getMonth()+1)+"/"+d.getFullYear();})();
+
+// Timer da oferta: 15 minutos a partir da primeira visita desta aba/sessão (não reseta a cada reload).
+(function(){
+  var el = document.getElementById("timerClock"); if (!el) return;
+  var KEY = "mapapsi_deadline";
+  var deadline;
+  try {
+    var saved = sessionStorage.getItem(KEY);
+    deadline = saved ? parseInt(saved, 10) : (Date.now() + 15 * 60 * 1000);
+    if (!saved) sessionStorage.setItem(KEY, String(deadline));
+  } catch (e) {
+    deadline = Date.now() + 15 * 60 * 1000;
+  }
+  function tick(){
+    var diff = deadline - Date.now();
+    if (diff <= 0) { el.textContent = "00:00"; return; }
+    var m = Math.floor(diff / 60000), s = Math.floor((diff % 60000) / 1000);
+    el.textContent = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
 
 // Botões levam aos planos sem gravar #planos no endereço (reload volta ao topo).
 document.querySelectorAll('a[href="#planos"]').forEach(function(a){
