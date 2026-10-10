@@ -524,7 +524,7 @@ if (window.fbq) fbq("track", "ViewContent");
   var original = Array.prototype.slice.call(t.children);
   original.forEach(function(n){ var c = n.cloneNode(true); c.setAttribute("aria-hidden", "true"); t.appendChild(c); });
 
-  var paused = false, resumeTimer = null, halfWidth = 0;
+  var paused = false, resumeTimer = null, halfWidth = 0, pos = 0;
   function measure(){ halfWidth = t.scrollWidth / 2; }
   measure();
   window.addEventListener("resize", measure);
@@ -538,14 +538,20 @@ if (window.fbq) fbq("track", "ViewContent");
   ["touchend", "pointerup", "touchcancel"].forEach(function(e){
     s.addEventListener(e, function(){
       if (resumeTimer) clearTimeout(resumeTimer);
-      resumeTimer = setTimeout(function(){ paused = false; }, 1800);
+      resumeTimer = setTimeout(function(){
+        pos = s.scrollLeft; // retoma de onde a pessoa arrastou, nao do ultimo valor calculado
+        paused = false;
+      }, 1800);
     });
   });
 
   function tick(){
     if (!paused) {
-      s.scrollLeft += 0.6;
-      if (halfWidth > 0 && s.scrollLeft >= halfWidth) s.scrollLeft -= halfWidth;
+      pos += 0.6; // acumula em variavel propria: alguns navegadores mobile arredondam
+                  // scrollLeft pro inteiro mais proximo, entao ler o valor de volta a
+                  // cada frame perdia a fracao e o carrossel nunca saia do lugar
+      if (halfWidth > 0 && pos >= halfWidth) pos -= halfWidth;
+      s.scrollLeft = pos;
     }
     requestAnimationFrame(tick);
   }
