@@ -70,11 +70,10 @@ p{margin:0 0 12px}
 .ph.dark{background:#fff;border-color:var(--line);color:var(--muted)}
 .hero-grid{display:grid;gap:26px;align-items:center}
 .bg-l{background:var(--blue-l)} .bg-s{background:var(--soft)} .bg-w{background:#fff}
-.slider{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:6px 2px 14px}
+.slider{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 2px 14px}
 .slider::-webkit-scrollbar{display:none}
-.track{display:flex}
+.track{display:flex;width:max-content}
 .track .ph{flex:0 0 260px;margin-right:14px;min-height:300px}
-.track img{scroll-snap-align:center}
 .hint{font-size:14px;color:var(--muted);margin-top:4px}
 .grid{display:grid;gap:14px}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
@@ -515,6 +514,45 @@ if (window.fbq) fbq("track", "ViewContent");
     setTimeout(tick, 1000);
   }
   tick();
+})();
+
+// Carrossel "veja por dentro": auto-scroll em loop continuo, mas para de verdade
+// quando a pessoa toca e arrasta (scroll nativo), retomando o loop depois.
+(function(){
+  var s = document.getElementById("slider"), t = document.getElementById("track"); if (!s || !t) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var original = Array.prototype.slice.call(t.children);
+  original.forEach(function(n){ var c = n.cloneNode(true); c.setAttribute("aria-hidden", "true"); t.appendChild(c); });
+
+  var paused = false, resumeTimer = null, halfWidth = 0;
+  function measure(){ halfWidth = t.scrollWidth / 2; }
+  measure();
+  window.addEventListener("resize", measure);
+
+  ["touchstart", "pointerdown"].forEach(function(e){
+    s.addEventListener(e, function(){
+      paused = true;
+      if (resumeTimer) clearTimeout(resumeTimer);
+    });
+  });
+  ["touchend", "pointerup", "touchcancel"].forEach(function(e){
+    s.addEventListener(e, function(){
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function(){ paused = false; }, 1800);
+    });
+  });
+  s.addEventListener("mouseenter", function(){ paused = true; });
+  s.addEventListener("mouseleave", function(){ paused = false; });
+
+  function tick(){
+    if (!paused) {
+      s.scrollLeft += 0.6;
+      if (halfWidth > 0 && s.scrollLeft >= halfWidth) s.scrollLeft -= halfWidth;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
 })();
 
 // Botões levam aos planos sem gravar #planos no endereço (reload volta ao topo).
