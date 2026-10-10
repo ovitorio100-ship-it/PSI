@@ -520,7 +520,6 @@ if (window.fbq) fbq("track", "ViewContent");
 // quando a pessoa toca e arrasta (scroll nativo), retomando o loop depois.
 (function(){
   var s = document.getElementById("slider"), t = document.getElementById("track"); if (!s || !t) return;
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   var original = Array.prototype.slice.call(t.children);
   original.forEach(function(n){ var c = n.cloneNode(true); c.setAttribute("aria-hidden", "true"); t.appendChild(c); });
