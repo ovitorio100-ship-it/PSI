@@ -70,12 +70,11 @@ p{margin:0 0 12px}
 .ph.dark{background:#fff;border-color:var(--line);color:var(--muted)}
 .hero-grid{display:grid;gap:26px;align-items:center}
 .bg-l{background:var(--blue-l)} .bg-s{background:var(--soft)} .bg-w{background:#fff}
-.slider{overflow:hidden;padding:6px 0 14px}
-.track{display:flex;width:max-content;animation:loop 28s linear infinite}
-.slider:hover .track,.slider.hold .track{animation-play-state:paused}
+.slider{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:6px 2px 14px}
+.slider::-webkit-scrollbar{display:none}
+.track{display:flex}
 .track .ph{flex:0 0 260px;margin-right:14px;min-height:300px}
-@keyframes loop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.track{animation:none;overflow-x:auto}}
+.track img{scroll-snap-align:center}
 .hint{font-size:14px;color:var(--muted);margin-top:4px}
 .grid{display:grid;gap:14px}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
@@ -527,14 +526,6 @@ document.querySelectorAll('a[href="#planos"]').forEach(function(a){
   });
 });
 if (location.hash === "#planos") history.replaceState(null, "", location.pathname + location.search);
-
-// Carrossel em loop contínuo: duplica os slides e a faixa anda sem parar (CSS). Pausa ao encostar.
-(function(){
-  var t=document.getElementById("track"), s=document.getElementById("slider"); if(!t||!s) return;
-  Array.prototype.slice.call(t.children).forEach(function(n){var c=n.cloneNode(true);c.setAttribute("aria-hidden","true");t.appendChild(c);});
-  ["touchstart","pointerdown"].forEach(function(e){s.addEventListener(e,function(){s.classList.add("hold");});});
-  ["touchend","pointerup","touchcancel"].forEach(function(e){s.addEventListener(e,function(){setTimeout(function(){s.classList.remove("hold");},1500);});});
-})();
 
 // Relatos: setas, bolinhas e ampliação.
 (function(){
