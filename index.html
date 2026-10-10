@@ -542,8 +542,6 @@ if (window.fbq) fbq("track", "ViewContent");
       resumeTimer = setTimeout(function(){ paused = false; }, 1800);
     });
   });
-  s.addEventListener("mouseenter", function(){ paused = true; });
-  s.addEventListener("mouseleave", function(){ paused = false; });
 
   function tick(){
     if (!paused) {
